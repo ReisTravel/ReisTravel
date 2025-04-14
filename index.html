@@ -330,6 +330,44 @@ class="chat-whatsapp" target="_blank" title="Fale conosco no WhatsApp">
 <span>Atendimento</span>
 </a>
 
+<div class="chatbot-container" id="chatbot">
+  <div class="chatbot-header">
+    <strong>Atendimento Online</strong>
+    <button onclick="fecharChat()">×</button>
+  </div>
+  <div class="chatbot-body">
+    <p>Olá! Em que posso ajudar?</p>
+    <button onclick="respostaFAQ('Quais destinos vocês oferecem?')">📍 Quais destinos vocês oferecem?</button>
+    <button onclick="respostaFAQ('Como funciona o roteiro personalizado?')">📝 Como funciona o roteiro personalizado?</button>
+    <button onclick="respostaFAQ('Qual o prazo para entrega do roteiro?')">⏱️ Qual o prazo para entrega do roteiro?</button>
+    <button onclick="respostaFAQ('Quero falar com um atendente')">💬 Quero falar com um atendente</button>
+  </div>
+</div>
+
+<button class="abrir-chatbot" onclick="abrirChat()">💬 Suporte</button>
+
+<script>
+  function abrirChat() {
+    document.getElementById("chatbot").style.display = "block";
+  }
+
+  function fecharChat() {
+    document.getElementById("chatbot").style.display = "none";
+  }
+
+  function respostaFAQ(pergunta) {
+    if (pergunta.includes('destinos')) {
+      alert('Atendemos destinos nacionais e internacionais personalizados!');
+    } else if (pergunta.includes('roteiro personalizado')) {
+      alert('Você preenche o formulário, e montamos um roteiro com base no seu perfil!');
+    } else if (pergunta.includes('prazo')) {
+      alert('O prazo médio de entrega é de 2 a 3 dias úteis após o pagamento.');
+    } else {
+      window.open('https://wa.me/SEUNUMERO?text=Olá!%20Gostaria%20de%20falar%20com%20um%20atendente.', '_blank');
+    }
+  }
+</script>
+
   
   
 </body>
