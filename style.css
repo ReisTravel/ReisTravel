@@ -711,3 +711,8 @@ body {
 }
 
 
+.img-fundo-salvador {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
