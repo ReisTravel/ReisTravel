@@ -111,7 +111,7 @@
           <img src="imagens/BA.jpg" alt="Salvador">
           <h3>Salvador</h3>
           <p>Explore o Pelourinho, relaxe no Farol da Barra e curta a culinária baiana.</p>
-          <button class="btn-azul">Ver roteiro</button>
+          <button class="btn-azul" onclick="abrirModal('rio')">Ver roteiro</button>
           <a href="https://api.whatsapp.com/send?phone=5575999831566" target="_blank" class="btn-cta">Quero esse roteiro</a>
         </div>
       
@@ -120,7 +120,7 @@
           <img src="imagens/RJ.jpg" alt="Rio de Janeiro">
           <h3>Rio de Janeiro</h3>
           <p>Trilhas, praias icônicas e visita ao Cristo Redentor e Pão de Açúcar.</p>
-          <button class="btn-azul">Ver roteiro</button>
+          <button class="btn-azul" onclick="abrirModal('salvador')">Ver roteiro</button>
           <a href="https://api.whatsapp.com/send?phone=5575999831566" target="_blank" class="btn-cta">Quero esse roteiro</a>
         </div>
       
@@ -129,7 +129,7 @@
           <img src="imagens/maceio.jpg" alt="Maceió">
           <h3>Maceió</h3>
           <p>Mar cristalino, piscinas naturais e tranquilidade nas praias do litoral alagoano.</p>
-          <button class="btn-azul">Ver roteiro</button>
+          <button class="btn-azul" onclick="abrirModal('meceio')">Ver roteiro</button>
           <a href="https://api.whatsapp.com/send?phone=5575999831566" target="_blank" class="btn-cta">Quero esse roteiro</a>
         </div>
       </section>
@@ -182,7 +182,7 @@
     };
 
     document.getElementById('modalConteudo').innerHTML = conteudo[destino];
-    document.getElementById('botaoWhatsapp').href = `https://wa.me/SEUNUMERO?text=${encodeURIComponent(whatsappMensagem[destino])}`;
+    document.getElementById('botaoWhatsapp').href = `https://api.whatsapp.com/send?phone=5575999831566text=${encodeURIComponent(whatsappMensagem[destino])}`;
     document.getElementById('roteiroModal').style.display = 'flex';
   }
 
@@ -190,17 +190,7 @@
     document.getElementById('roteiroModal').style.display = 'none';
   }
 </script>
-
-<button onclick="abrirModal('rio')">Ver roteiro</button>
-<button onclick="abrirModal('salvador')">Ver roteiro</button>
-<button onclick="abrirModal('maceio')">Ver roteiro</button>
-
-     
-      
-      
-      
-      
-      
+   
       
   </section>
 
