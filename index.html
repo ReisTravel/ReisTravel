@@ -324,11 +324,13 @@
 </script>
 
   
-<a href="https://api.whatsapp.com/send?phone=5575999831566" 
-class="chat-whatsapp" target="_blank" title="Fale conosco no WhatsApp">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-<span>Atendimento</span>
+<a href="https://api.whatsapp.com/send?phone=5575999831566&text=Olá!%20Gostaria%20de%20ajuda%20com%20um%20roteiro." 
+   class="chat-whatsapp" target="_blank" title="Fale conosco no WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  <span>Atendimento</span>
 </a>
+
+
 
 <div class="chatbot-container" id="chatbot">
   <div class="chatbot-header">
@@ -343,8 +345,6 @@ class="chat-whatsapp" target="_blank" title="Fale conosco no WhatsApp">
     <button onclick="respostaFAQ('Quero falar com um atendente')">💬 Quero falar com um atendente</button>
   </div>
 </div>
-
-<button class="abrir-chatbot" onclick="abrirChat()">💬 Suporte</button>
 
 <script>
   function abrirChat() {
@@ -363,10 +363,11 @@ class="chat-whatsapp" target="_blank" title="Fale conosco no WhatsApp">
     } else if (pergunta.includes('prazo')) {
       alert('O prazo médio de entrega é de 2 a 3 dias úteis após o pagamento.');
     } else {
-      window.open('https://api.whatsapp.com/send?phone=5575999831566', '_blank');
+      window.open('https://api.whatsapp.com/send?phone=5575999831566&text=Olá!%20Gostaria%20de%20falar%20com%20um%20atendente.', '_blank');
     }
   }
 </script>
+
 
   
   
