@@ -580,34 +580,55 @@ body {
   color: #444;
 }
 
-.porque-escolher {
+.benefits-section {
   padding: 60px 20px;
-  background-color: #ffffff;
+  background-color: #f9f9f9;
   text-align: center;
-  scroll-margin-top: 80px;
 }
 
-.container-porque {
-  max-width: 1000px;
-  margin: auto;
-}
-
-.container-porque h2 {
-  font-size: 2.5rem;
-  color: #007bff;
+.benefits-section h2 {
+  font-size: 2rem;
+  color: #007bdb;
   margin-bottom: 30px;
-  position: relative;
 }
 
-.container-porque h2::after {
-  content: "";
-  width: 80px;
-  height: 4px;
-  background: #007bff;
-  display: block;
-  margin: 10px auto 0;
-  border-radius: 4px;
+.benefits-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
+
+.benefit-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  max-width: 250px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.benefit-card h3 {
+  font-size: 1.1rem;
+  color: #002c57;
+}
+
+.benefit-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
 
 /* === Destinos em Alta - Estilo === */
 .destinos-em-alta {
