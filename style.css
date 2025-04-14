@@ -720,8 +720,35 @@ body {
 }
 
 
-.img-fundo-salvador {
-  width: 100%;
-  height: auto;
+.btn-azul {
+  background-color: #007bbf;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.btn-azul:hover {
+  background-color: #005c94;
+}
+
+.btn-cta {
   display: block;
-  object-fit: cover;
+  background-color: #007bbf;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 12px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: #005c94;
+}
