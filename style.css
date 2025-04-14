@@ -733,3 +733,73 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.blog-section {
+  padding: 60px 30px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.blog-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.blog-section .subtitulo {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.blog-cards {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-items: center;
+}
+
+.blog-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  max-width: 400px;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card img {
+  width: 100%;
+  height: auto;
+}
+
+.blog-card h3 {
+  font-size: 1.2rem;
+  margin: 15px 10px 5px;
+  color: #003366;
+}
+
+.blog-card p {
+  font-size: 0.95rem;
+  margin: 0 10px 15px;
+  color: #555;
+}
+
+.btn-leia {
+  display: inline-block;
+  background-color: #0077cc;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-leia:hover {
+  background-color: #005fa3;
+}
