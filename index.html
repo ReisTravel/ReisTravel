@@ -134,65 +134,68 @@
         </div>
       </section>
       
-      
-      <!-- Modal -->
-      <div class="modal-overlay" id="roteiroModal">
-        <div class="modal">
-          <span class="fechar" onclick="fecharModal()">×</span>
-          <div id="modalConteudo"></div>
-        </div>
-      </div>
-      
-      <script>
-        function abrirModal(destino) {
-          const conteudo = {
-            rio: `
-              <h2>Roteiro Rio de Janeiro (3 dias)</h2>
-              <ul>
-                <li><strong>Dia 1:</strong> Cristo Redentor + Santa Teresa</li>
-                <li><strong>Dia 2:</strong> Praia de Copacabana + Pão de Açúcar</li>
-                <li><strong>Dia 3:</strong> Trilha no Morro Dois Irmãos + Lapa</li>
-              </ul>
-            `,
-            salvador: `
-              <h2>Roteiro Salvador (4 dias)</h2>
-              <ul>
-                <li><strong>Dia 1:</strong> Pelourinho + Elevador Lacerda</li>
-                <li><strong>Dia 2:</strong> Farol da Barra + Praia do Flamengo</li>
-                <li><strong>Dia 3:</strong> Igreja do Bonfim + culinária baiana</li>
-                <li><strong>Dia 4:</strong> Mercado Modelo + passeio de barco</li>
-              </ul>
-            `,
-            maceio: `
-              <h2>Roteiro Maceió (5 dias)</h2>
-              <ul>
-                <li><strong>Dia 1:</strong> Praia do Francês</li>
-                <li><strong>Dia 2:</strong> Maragogi</li>
-                <li><strong>Dia 3:</strong> Pajuçara + feirinha</li>
-                <li><strong>Dia 4:</strong> Piscinas naturais + jangada</li>
-                <li><strong>Dia 5:</strong> Dia livre + culinária local</li>
-              </ul>
-            `
-          };
-        
-          document.getElementById('modalConteudo').innerHTML = conteudo[destino];
-          document.getElementById('roteiroModal').style.display = 'flex';
-        }
-        
-        function fecharModal() {
-          document.getElementById('roteiroModal').style.display = 'none';
-        }
-        
-        function filtrar(categoria) {
-          document.querySelectorAll('.roteiro-card').forEach(card => {
-            if (categoria === 'todos' || card.dataset.categoria === categoria) {
-              card.style.display = 'block';
-            } else {
-              card.style.display = 'none';
-            }
-          });
-        }
-        </script>
+      <!-- Modal de Roteiro -->
+<div class="modal-overlay" id="roteiroModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="fecharModal()">×</button>
+    <div id="modalConteudo"></div>
+    <a id="botaoWhatsapp" href="#" target="_blank" class="whatsapp-link">Quero esse roteiro no WhatsApp</a>
+  </div>
+</div>
+
+<script>
+  function abrirModal(destino) {
+    const conteudo = {
+      rio: `
+        <h2>Roteiro Rio de Janeiro (3 dias)</h2>
+        <ul>
+          <li><strong>Dia 1:</strong> Cristo Redentor + Santa Teresa</li>
+          <li><strong>Dia 2:</strong> Praia de Copacabana + Pão de Açúcar</li>
+          <li><strong>Dia 3:</strong> Trilha no Morro Dois Irmãos + Lapa</li>
+        </ul>
+      `,
+      salvador: `
+        <h2>Roteiro Salvador (4 dias)</h2>
+        <ul>
+          <li><strong>Dia 1:</strong> Pelourinho + Elevador Lacerda</li>
+          <li><strong>Dia 2:</strong> Farol da Barra + Praia do Flamengo</li>
+          <li><strong>Dia 3:</strong> Igreja do Bonfim + culinária baiana</li>
+          <li><strong>Dia 4:</strong> Mercado Modelo + passeio de barco</li>
+        </ul>
+      `,
+      maceio: `
+        <h2>Roteiro Maceió (5 dias)</h2>
+        <ul>
+          <li><strong>Dia 1:</strong> Praia do Francês</li>
+          <li><strong>Dia 2:</strong> Maragogi</li>
+          <li><strong>Dia 3:</strong> Pajuçara + feirinha</li>
+          <li><strong>Dia 4:</strong> Piscinas naturais + jangada</li>
+          <li><strong>Dia 5:</strong> Dia livre + culinária local</li>
+        </ul>
+      `
+    };
+
+    const whatsappMensagem = {
+      rio: "Olá! Gostaria de informações sobre o roteiro de 3 dias para o Rio de Janeiro!",
+      salvador: "Olá! Tenho interesse no roteiro de 4 dias em Salvador!",
+      maceio: "Olá! Quero saber mais sobre o roteiro de 5 dias em Maceió!"
+    };
+
+    document.getElementById('modalConteudo').innerHTML = conteudo[destino];
+    document.getElementById('botaoWhatsapp').href = `https://wa.me/SEUNUMERO?text=${encodeURIComponent(whatsappMensagem[destino])}`;
+    document.getElementById('roteiroModal').style.display = 'flex';
+  }
+
+  function fecharModal() {
+    document.getElementById('roteiroModal').style.display = 'none';
+  }
+</script>
+
+<button onclick="abrirModal('rio')">Ver roteiro</button>
+<button onclick="abrirModal('salvador')">Ver roteiro</button>
+<button onclick="abrirModal('maceio')">Ver roteiro</button>
+
+     
       
       
       
