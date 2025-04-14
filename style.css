@@ -155,47 +155,56 @@ body {
 }
 
 
-#roteiros {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* ou space-around, space-between */
-  gap: 20px;
-  padding: 20px;
+/* Container principal centralizado */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
-  
-@media (min-width: 768px) {
-  .roteiros-container {
-    justify-content: center;
-  }
 
-  .roteiro-card {
-    flex: 1 1 300px;
-  }
-}  
+/* Títulos */
+.titulo-roteiros {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
 
-  .filtros {
-    text-align: center;
-    margin: 20px 0;
-  }
+.subtitulo-roteiros {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+/* Filtros */
+.filtros-roteiro {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.btn-filtro {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-filtro:hover,
+.btn-filtro.ativo {
+  background-color: #005fa3;
+}
+
   
-  .filtros button {
-    margin: 0 10px;
-    padding: 8px 15px;
-    border: none;
-    background: #007bff;
-    color: white;
-    border-radius: 20px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-  }
   
-  .carrossel {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 30px 10px;
-  }
+  
   
  /* Container dos cards */
 .roteiros-container {
