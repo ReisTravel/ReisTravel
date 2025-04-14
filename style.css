@@ -563,14 +563,12 @@ body {
     background-color: #005f8e;
   }
 
-  
-
   .footer-total {
+    width: 100vw; /* força largura total da tela */
     background-color: #0078a0;
     color: white;
-    width: 100%;
-    margin-top: 40px;
-    padding: 40px 0 20px 0;
+    padding: 40px 20px 20px 20px;
+    box-sizing: border-box;
   }
   
   .footer-conteudo {
@@ -579,14 +577,24 @@ body {
     text-align: center;
   }
   
+  .footer-conteudo h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-conteudo p {
+    margin: 5px 0;
+  }
+  
   .footer-social {
-    margin-top: 15px;
+    margin-top: 20px;
   }
   
   .footer-social a {
-    color: white;
     margin: 0 10px;
+    color: white;
     font-size: 20px;
+    text-decoration: none;
     transition: color 0.3s ease;
   }
   
@@ -596,9 +604,10 @@ body {
   
   .footer-direitos {
     text-align: center;
+    margin-top: 30px;
     font-size: 14px;
-    padding-top: 20px;
   }
+  
   
   
   /* Botão WhatsApp flutuante */
