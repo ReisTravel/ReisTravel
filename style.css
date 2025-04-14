@@ -564,60 +564,42 @@ body {
   }
 
   
-  .footer {
-    background-color: #0078a0; /* azul profissional */
+
+  .footer-total {
+    background-color: #0078a0;
     color: white;
     width: 100%;
-    padding: 30px 0;
     margin-top: 40px;
-    }
-    
+    padding: 40px 0 20px 0;
+  }
   
-  
-  .footer-container {
+  .footer-conteudo {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-  
   }
   
-  .footer-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .footer-info p {
-    margin: 5px 0;
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  .footer-social {
+    margin-top: 15px;
   }
   
   .footer-social a {
     color: white;
-  margin: 0 12px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s ease;
   }
   
   .footer-social a:hover {
-    color: #ffdd57; 
+    color: #ffdd57;
   }
   
-  .footer-copy {
-    margin-top: 20px;
-    font-size: 0.85rem;
-    opacity: 0.7;
+  .footer-direitos {
+    text-align: center;
+    font-size: 14px;
+    padding-top: 20px;
   }
+  
   
   /* Botão WhatsApp flutuante */
 .chat-whatsapp {
