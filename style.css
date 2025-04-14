@@ -634,12 +634,6 @@ body {
   }
   
 
-a:focus,
-button:focus {
-  outline: 2px dashed #00b4d8;
-  outline-offset: 3px;
-}
-
 
 
 /* Chatbot */
