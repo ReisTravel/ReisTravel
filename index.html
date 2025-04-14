@@ -92,6 +92,71 @@
           <p>Você recebe um roteiro digital completo em PDF com todos os detalhes organizados dia a dia.</p>
         </div>
     </div>
+
+    <section class="filtro-roteiros">
+      <h2>Encontre seu roteiro ideal</h2>
+      <form id="form-filtro">
+    
+        <div class="campo">
+          <label for="dias">Quantos dias?</label>
+          <select id="dias" name="dias">
+            <option value="">Todos</option>
+            <option value="4">4 dias</option>
+            <option value="7">7 dias</option>
+            <option value="15">15 dias</option>
+          </select>
+        </div>
+    
+        <div class="campo">
+          <label for="tipo">Tipo de viagem</label>
+          <select id="tipo" name="tipo">
+            <option value="">Todos</option>
+            <option value="praia">Praia</option>
+            <option value="cidade">Cidade</option>
+            <option value="aventura">Aventura</option>
+          </select>
+        </div>
+    
+        <div class="campo">
+          <label for="preco">Valor estimado</label>
+          <select id="preco" name="preco">
+            <option value="">Todos</option>
+            <option value="baixo">Até R$2000</option>
+            <option value="medio">Até R$4000</option>
+            <option value="alto">Acima de R$4000</option>
+          </select>
+        </div>
+    
+        <button type="submit">Filtrar</button>
+      </form>
+    </section>
+
+    <script>
+      document.getElementById("form-filtro").addEventListener("submit", function (e) {
+        e.preventDefault();
+    
+        const dias = document.getElementById("dias").value;
+        const tipo = document.getElementById("tipo").value;
+        const preco = document.getElementById("preco").value;
+    
+        const roteiros = document.querySelectorAll(".roteiro-card");
+    
+        roteiros.forEach(card => {
+          const cardDias = card.getAttribute("data-dias");
+          const cardTipo = card.getAttribute("data-tipo");
+          const cardPreco = card.getAttribute("data-preco");
+    
+          const match =
+            (dias === "" || cardDias === dias) &&
+            (tipo === "" || cardTipo === tipo) &&
+            (preco === "" || cardPreco === preco);
+    
+          card.style.display = match ? "block" : "none";
+        });
+      });
+    </script>
+    
+
       <section id="roteiros">
         <h2 style="font-family: 'Poppins', sans-serif; text-align:center; font-size: 2rem; margin-bottom: 0.5rem;">Roteiros Incríveis (3 a 5 dias)</h2>
         <p style="text-align:center; font-family: 'Poppins', sans-serif;">Destinos selecionados para você viver o melhor em pouco tempo.</p>

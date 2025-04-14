@@ -698,3 +698,55 @@ body {
 .btn-rota:hover {
   background-color: #005fa3;
 }
+
+.filtro-roteiros {
+  background: #f1f9ff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.filtro-roteiros h2 {
+  color: #007bdb;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+#form-filtro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.campo label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #002c57;
+}
+
+.campo select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+#form-filtro button {
+  padding: 12px 25px;
+  background-color: #007bdb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#form-filtro button:hover {
+  background-color: #005fa3;
+}
+
