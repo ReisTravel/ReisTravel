@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reis Travel - Quem Somos</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <i class="fas fa-plane-departure"></i>
+      <span>Reis Travel</span>
+    </div>
+
+    <nav class="nav-menu">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="social-icons" >
+      <a href="https://www.instagram.com/goreistravel/#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://api.whatsapp.com/send?phone=5575999831566" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.youtube.com/@ReisTravel" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="mailto:reistraveel@gmail.com" target="_blank" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </header>
+  
+  <section id="sobre" class="sobre-nos">
+    <div class="container">
+      <h2 class="titulo">Quem Somos</h2>
+      <p class="descricao">
+        Na <strong>Reis Travel</strong>, transformamos o seu sonho de viagem em realidade com profissionalismo, atenção aos detalhes e paixão por viagens. Atuamos com excelência na venda de <strong>passagens aéreas</strong>, criamos <strong>roteiros personalizados</strong> sob medida, oferecemos os melhores <strong>hotéis</strong>, organizamos <strong>transfers</strong> seguros, realizamos seu <strong>check-in</strong> e contamos com um <strong>suporte especializado</strong> para garantir que cada momento da sua experiência seja inesquecível.
+      </p>
+      
+      <section id="roteiros-personalizados" class="roteiros-personalizados">
+        <div class="container">
+          <h2 class="titulo">Roteiros Personalizados</h2>
+          <p class="descricao">
+            Quer um roteiro exclusivo, feito sob medida para seu estilo de viagem? Preencha nosso formulário e receba um plano personalizado com todos os detalhes!
+          </p>
+          <a href="#contato" class="botao-formulario">Montar meu roteiro</a>
+        </div>
+      </section>
+      
+      <div class="servicos">
+        <div class="card">
+          <i class="fas fa-plane"></i>
+          <h3>Passagens Aéreas</h3>
+          <p>Os melhores preços e as rotas mais rápidas para qualquer destino do mundo.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-map-marked-alt"></i>
+          <h3>Roteiros Personalizados</h3>
+          <p>Roteiros exclusivos feitos especialmente para o seu estilo de viagem.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-hotel"></i>
+          <h3>Hotéis</h3>
+          <p>Hospedagens com conforto, qualidade e localização estratégica.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-shuttle-van"></i>
+          <h3>Transfers</h3>
+          <p>Transporte seguro e pontual do aeroporto até seu destino.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-check-circle"></i>
+          <h3>Check-in</h3>
+          <p>Facilidade e agilidade no seu check-in, com suporte completo e personalizado.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-headset"></i>
+          <h3>Suporte</h3>
+          <p>Atendimento dedicado antes, durante e depois da sua viagem.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-list-alt"></i>
+          <h3>Briefing Personalizado</h3>
+          <p>Você preenche um formulário com seu estilo, orçamento e preferências.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-file-pdf"></i>
+          <h3>Entrega em PDF</h3>
+          <p>Você recebe um roteiro digital completo em PDF com todos os detalhes organizados dia a dia.</p>
+        </div>
+    </div>
+      <section id="roteiros">
+        <h2 style="font-family: 'Poppins', sans-serif; text-align:center; font-size: 2rem; margin-bottom: 0.5rem;">Roteiros Incríveis (3 a 5 dias)</h2>
+        <p style="text-align:center; font-family: 'Poppins', sans-serif;">Destinos selecionados para você viver o melhor em pouco tempo.</p>
+      
+        <div class="filtros">
+          <button onclick="filtrar('todos')">Todos</button>
+          <button onclick="filtrar('rio')">Rio de Janeiro</button>
+          <button onclick="filtrar('salvador')">Salvador</button>
+          <button onclick="filtrar('maceio')">Maceió</button>
+        </div>
+      
+        <div class="carrossel" id="carrosselRoteiros">
+          <!-- Roteiro - RIO -->
+          <div class="roteiro-card" data-categoria="rio">
+            <img src="https://cdn.pixabay.com/photo/2020/06/06/10/51/rio-de-janeiro-5266736_1280.jpg" alt="Rio de Janeiro">
+            <h3>Rio de Janeiro</h3>
+            <p>Trilhas, praias icônicas, pôr do sol no Arpoador, Pão de Açúcar e visita ao Cristo Redentor.</p>
+            <button onclick="abrirModal('rio')">Ver roteiro</button>
+            <a href="https://api.whatsapp.com/send?phone=5575999831566" target="_blank">Quero esse roteiro</a>
+          </div>
+      
+          <!-- Roteiro - SALVADOR -->
+          <div class="roteiro-card" data-categoria="salvador">
+            <img src="https://cdn.pixabay.com/photo/2020/10/13/20/21/salvador-5651443_1280.jpg" alt="Salvador">
+            <h3>Salvador</h3>
+            <p>Explore o Pelourinho, relaxe no Farol da Barra e curta a culinária baiana.</p>
+            <button onclick="abrirModal('salvador')">Ver roteiro</button>
+            <a href="https://api.whatsapp.com/send?phone=5575999831566" target="_blank">Quero esse roteiro</a>
+          </div>
+      
+          <!-- Roteiro - MACEIÓ -->
+          <div class="roteiro-card" data-categoria="maceio">
+            <img src="https://cdn.pixabay.com/photo/2017/09/13/18/07/maceio-2744312_1280.jpg" alt="Maceió">
+            <h3>Maceió</h3>
+            <p>Piscinas naturais, jangadas e tranquilidade à beira-mar para renovar as energias.</p>
+            <button onclick="abrirModal('maceio')">Ver roteiro</button>
+            <a href="https://api.whatsapp.com/send?phone=5575999831566" target="_blank">Quero esse roteiro</a>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Modal -->
+      <div class="modal-overlay" id="roteiroModal">
+        <div class="modal">
+          <span class="fechar" onclick="fecharModal()">×</span>
+          <div id="modalConteudo"></div>
+        </div>
+      </div>
+      
+      <script>
+        function abrirModal(destino) {
+          const conteudo = {
+            rio: `
+              <h2>Roteiro Rio de Janeiro (3 dias)</h2>
+              <ul>
+                <li><strong>Dia 1:</strong> Cristo Redentor + Santa Teresa</li>
+                <li><strong>Dia 2:</strong> Praia de Copacabana + Pão de Açúcar</li>
+                <li><strong>Dia 3:</strong> Trilha no Morro Dois Irmãos + Lapa</li>
+              </ul>
+            `,
+            salvador: `
+              <h2>Roteiro Salvador (4 dias)</h2>
+              <ul>
+                <li><strong>Dia 1:</strong> Pelourinho + Elevador Lacerda</li>
+                <li><strong>Dia 2:</strong> Farol da Barra + Praia do Flamengo</li>
+                <li><strong>Dia 3:</strong> Igreja do Bonfim + culinária baiana</li>
+                <li><strong>Dia 4:</strong> Mercado Modelo + passeio de barco</li>
+              </ul>
+            `,
+            maceio: `
+              <h2>Roteiro Maceió (5 dias)</h2>
+              <ul>
+                <li><strong>Dia 1:</strong> Praia do Francês</li>
+                <li><strong>Dia 2:</strong> Maragogi</li>
+                <li><strong>Dia 3:</strong> Pajuçara + feirinha</li>
+                <li><strong>Dia 4:</strong> Piscinas naturais + jangada</li>
+                <li><strong>Dia 5:</strong> Dia livre + culinária local</li>
+              </ul>
+            `
+          };
+        
+          document.getElementById('modalConteudo').innerHTML = conteudo[destino];
+          document.getElementById('roteiroModal').style.display = 'flex';
+        }
+        
+        function fecharModal() {
+          document.getElementById('roteiroModal').style.display = 'none';
+        }
+        
+        function filtrar(categoria) {
+          document.querySelectorAll('.roteiro-card').forEach(card => {
+            if (categoria === 'todos' || card.dataset.categoria === categoria) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        }
+        </script>
+      
+      
+      
+      
+      
+      
+  </section>
+
+
+  <section id="depoimentos" class="depoimentos">
+    <h2 class="titulo">O que nossos clientes dizem</h2>
+    <p class="descricao">Experiências reais de quem já viajou com a Reis Travel.</p>
+  
+    <div class="depoimentos-container">
+      <div class="depoimento-card">
+        <p class="comentario">"Roteiro perfeito! Tudo funcionou exatamente como combinado. Me senti super segura durante a viagem."</p>
+        <div class="estrelas">★★★★★</div>
+        <span class="nome">Juliana M.</span>
+      </div>
+  
+      <div class="depoimento-card">
+        <p class="comentario">"Serviço impecável! A equipe cuidou de cada detalhe do meu roteiro para Salvador. Já quero a próxima!"</p>
+        <div class="estrelas">★★★★★</div>
+        <span class="nome">Carlos F.</span>
+      </div>
+  
+      <div class="depoimento-card">
+        <p class="comentario">"Recomendo demais! Viajar com suporte assim é outra experiência."</p>
+        <div class="estrelas">★★★★☆</div>
+        <span class="nome">Beatriz L.</span>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="contato" class="formulario-personalizado">
+    <h2 class="titulo">Monte seu Roteiro Personalizado</h2>
+    <p class="descricao">Preencha com seus dados e preferências de viagem. Nós cuidamos do resto!</p>
+  
+    <form action="https://formsubmit.co/reistraveel@gmmail.com" method="POST">
+      <!-- Dados de contato -->
+      <input type="text" name="nome" placeholder="Nome completo" required>
+      <input type="tel" name="telefone" placeholder="WhatsApp (com DDD)" required>
+      <input type="text" name="instagram" placeholder="Usuário do Instagram (@...)" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+  
+      <!-- Tipo de viagem -->
+<select name="tipo_viagem" required>
+  <option value="">Tipo de Viagem</option>
+  <option value="Lazer">Lazer</option>
+  <option value="Lua de mel">Lua de mel</option>
+  <option value="Família">Família</option>
+  <option value="Negócios">Negócios</option>
+  <option value="Cultural">Cultural</option>
+  <option value="Econômica">Econômica</option>
+  <option value="Luxo">Luxo</option>
+  <option value="Aventura">Aventura</option>
+  <option value="Religiosa">Religiosa</option>
+  <option value="Cruzeiro">Cruzeiro</option>
+</select>
+
+<!-- Orçamento -->
+<select name="orcamento" required>
+  <option value="">Orçamento estimado</option>
+  <option value="Até R$ 1.000">Até R$ 1.000</option>
+  <option value="Até R$ 2.000">Até R$ 2.000</option>
+  <option value="R$ 2.000 a R$ 5.000">R$ 2.000 a R$ 5.000</option>
+  <option value="R$ 5.000 a R$ 10.000">R$ 5.000 a R$ 10.000</option>
+  <option value="Acima de R$ 10.000">Acima de R$ 10.000</option>
+</select>
+
+      <!-- Países e cidades -->
+      <input type="text" id="destino" name="destino" placeholder="País ou cidade que deseja conhecer" required>
+  
+      <!-- Comentários adicionais -->
+      <textarea name="mensagem" rows="5" placeholder="Descreva suas preferências de roteiro, número de dias, datas, etc."></textarea>
+  
+      <button type="submit">Enviar Roteiro</button>
+  
+      <!-- Proteções extras do FormSubmit -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://reistravel.github.io/reis-travel/obrigado.html">
+    </form>
+  </section>
+
+  
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <i class="fas fa-plane-departure"></i>
+        <span>Reis Travel</span>
+      </div>
+  
+      <div class="footer-info">
+        <p><i data-lucide="mail"></i> reistraveel@gmail.com</p>
+        <p><i data-lucide="phone"></i> (75) 99983-1566</p>
+        <p><i data-lucide="map-pin"></i> Alagoinhas - BA</p>
+      </div>
+  
+      <div class="footer-social">
+        <a href="https://www.instagram.com/goreistravel/#" target="_blank"><i data-lucide="instagram"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=5575999831566" target="_blank"><i data-lucide="message-circle"></i></a>
+        <a href="https://www.youtube.com/@ReisTravel" target="_blank"><i data-lucide="youtube"></i></a>
+      </div>
+      <a href="mailto:reistraveel@gmail.com" target="_blank" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Reis Travel. Todos os direitos reservados.</p>
+  </footer>
+  
+  
+  
+ 
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
+
+  
+  
+  <!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // duração da animação em ms
+    once: true      // anima uma vez só
+  });
+</script>
+
+  
+  
+  
+  
+</body>
+</html>

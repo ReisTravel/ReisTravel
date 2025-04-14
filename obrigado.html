@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Obrigado! - Reis Travel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    video.bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.4);
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .content {
+      background-color: rgba(0,0,0,0.6);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      animation: fadeIn 1s ease;
+    }
+
+    .logo img {
+      width: 160px;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+
+    .check-icon {
+      font-size: 3.5rem;
+      color: #90ee90;
+      margin-bottom: 20px;
+      animation: pop 1.2s ease-in-out forwards;
+    }
+
+    .frase-impacto {
+      font-size: 1.3rem;
+      font-style: italic;
+      margin-bottom: 20px;
+      color: #ffdd57;
+    }
+
+    a.btn-voltar {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #ffdd57;
+      color: #000;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    a.btn-voltar:hover {
+      background-color: #ffe27b;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- 🎥 Vídeo de fundo (pode usar um MP4 leve, paisagem, ou travel slow-motion) -->
+  <video autoplay muted loop class="bg-video">
+    <source src="https://cdn.coverr.co/videos/coverr-beach-walk-4477/1080p.mp4" type="video/mp4">
+  </video>
+
+  <div class="container">
+    <div class="content">
+      <div class="logo">
+        <img src="imagens/logo.png" alt="Reis Travel Logo">
+      </div>
+      <div class="check-icon"><i class="fas fa-check-circle"></i></div>
+      <h1>Formulário enviado com sucesso!</h1>
+      <p>Recebemos suas informações. Em breve entraremos em contato pelo WhatsApp ou Instagram com seu roteiro personalizado.</p>
+      <div class="frase-impacto">🌍 Sua viagem dos sonhos começa agora!</div>
+      <a href="https://reistravel.github.io/reis-travel/" class="btn-voltar">
+        <i class="fas fa-arrow-left"></i> Voltar para o site
+      </a>
+    </div>
+  </div>
+
+  <!-- 🎉 Confetes -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    setTimeout(() => {
+      confetti({
+        particleCount: 120,
+        spread: 90,
+        origin: { y: 0.6 },
+        colors: ['#ffdd57', '#ffffff', '#90ee90']
+      });
+    }, 500);
+  </script>
+</body>
+</html>

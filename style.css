@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f9ff;
+}
+
+/* Reset básico */
+
+  /* Header com animação */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(to right, #0077b6, #00b4d8);
+    color: white;
+    animation: slideIn 1s ease-in-out;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .logo i {
+    font-size: 28px;
+  }
+  
+  .nav-menu a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  .nav-menu a:hover {
+    color: #ffd60a;
+    transform: translateY(-2px);
+  }
+  
+  .social-icons a {
+    margin-left: 15px;
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s;
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.2);
+    color: #ffd60a;
+  }
+  
+
+/* Seção Sobre Nós */
+.sobre-nos {
+  background: #ffffff;
+  padding: 80px 40px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.titulo {
+  text-align: center;
+  font-size: 36px;
+  color: #0077b6;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.descricao {
+  text-align: center;
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  line-height: 1.7;
+  color: #444;
+  font-weight: 300;
+}
+
+.servicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.card {
+  background: #f1f9ff;
+  border: 2px solid #d0e8f2;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.4s, box-shadow 0.4s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.card i {
+  font-size: 32px;
+  color: #00b4d8;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #023e8a;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 15px;
+  color: #555;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+
+#roteiros {
+    padding: 40px 20px;
+    background: #fff;
+  }
+  
+  .filtros {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .filtros button {
+    margin: 0 10px;
+    padding: 8px 15px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .carrossel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 10px;
+  }
+  
+  .roteiro-card {
+    width: 100%;
+    max-width: 320px;
+    background: #f9f9f9;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  
+  .roteiro-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .roteiro-card button,
+  .roteiro-card a {
+    display: block;
+    margin: 10px auto;
+    text-decoration: none;
+    background: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .modal {
+    background: white;
+    padding: 30px;
+    max-width: 600px;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .fechar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+
+  .roteiros-personalizados {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+  
+  .roteiros-personalizados .titulo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #1e2a38;
+  }
+  
+  .roteiros-personalizados .descricao {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+  }
+  
+  .botao-formulario {
+    font-family: 'Poppins', sans-serif;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .botao-formulario:hover {
+    background-color: #0056b3;
+  }
+
+  .depoimentos {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .depoimentos .titulo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #1e2a38;
+    margin-bottom: 10px;
+  }
+  
+  .depoimentos .descricao {
+    font-family: 'Poppins', sans-serif;
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+  
+  .depoimentos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .depoimento-card {
+    background-color: #f1f1f1;
+    border-radius: 12px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .depoimento-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .depoimento-card .comentario {
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .depoimento-card .estrelas {
+    color: #f4c150;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .depoimento-card .nome {
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: #1e2a38;
+    font-size: 0.9rem;
+  }
+
+  .formulario-personalizado {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+  
+  .formulario-personalizado h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #1e2a38;
+    margin-bottom: 10px;
+  }
+  
+  .formulario-personalizado p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 40px;
+  }
+  
+  .formulario-personalizado form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 15px;
+  }
+  
+  .formulario-personalizado input,
+  .formulario-personalizado select,
+  .formulario-personalizado textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+  }
+  
+  .formulario-personalizado button {
+    background-color: #0077b6;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .formulario-personalizado button:hover {
+    background-color: #005f8e;
+  }
+
+  
+  .footer {
+    background-color: #0e1a2b;
+    color: #fff;
+    padding: 30px 20px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .footer-info p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .footer-social a {
+    margin: 0 10px;
+    color: #fff;
+    transition: color 0.3s;
+  }
+  
+  .footer-social a:hover {
+    color: #00bcd4;
+  }
+  
+  .footer-copy {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    opacity: 0.7;
+  }
+  
