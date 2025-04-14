@@ -664,7 +664,7 @@ body {
 }
 
 /* === Destinos em Alta - Estilo === */
-..destinos-em-alta {
+.destinos-em-alta {
   background-color: #f5f9ff;
   padding: 60px 20px;
   text-align: center;
