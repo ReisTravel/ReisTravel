@@ -662,3 +662,74 @@ body {
     transform: translateY(0);
   }
 }
+
+/* === Destinos em Alta - Estilo === */
+.destinos-section {
+  padding: 60px 20px;
+  background-color: #f5f7fa;
+  text-align: center;
+}
+
+.destinos-section h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #003366;
+}
+
+.destinos-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px;
+}
+
+.destino-card {
+  flex: 0 0 280px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  scroll-snap-align: start;
+}
+
+.destino-card:hover {
+  transform: scale(1.03);
+}
+
+.destino-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.destino-card h3 {
+  font-size: 1.2em;
+  margin: 15px 0 10px;
+  color: #333;
+}
+
+.destino-card a {
+  display: inline-block;
+  margin-bottom: 20px;
+  background: #0066cc;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.destino-card a:hover {
+  background: #004a99;
+}
+
+/* Scroll invisível em navegadores modernos */
+.destinos-carousel::-webkit-scrollbar {
+  display: none;
+}
+.destinos-carousel {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
