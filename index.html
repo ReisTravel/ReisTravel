@@ -182,7 +182,7 @@
     };
 
     document.getElementById('modalConteudo').innerHTML = conteudo[destino];
-    document.getElementById('botaoWhatsapp').href = `https://api.whatsapp.com/send?phone=5575999831566text=${encodeURIComponent(whatsappMensagem[destino])}`;
+    document.getElementById('botaoWhatsapp').href = `https://api.whatsapp.com/send?phone=5575999831566&text=${encodeURIComponent(whatsappMensagem[destino])}`;
     document.getElementById('roteiroModal').style.display = 'flex';
   }
 
