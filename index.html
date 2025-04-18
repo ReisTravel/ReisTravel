@@ -22,6 +22,176 @@
   })();
   </script>
   <!--End of Tawk.to Script-->
+
+  <!-- Botão Flutuante FAQ -->
+<button id="btn-faq" title="Perguntas Frequentes">❓ FAQ</button>
+
+<!-- Modal FAQ -->
+<div id="faq-modal" class="faq-modal">
+  <div class="faq-content">
+    <span class="fechar" id="fechar-faq">&times;</span>
+    <h2>❓ Perguntas Frequentes</h2>
+
+    <details>
+      <summary>📄 Quais documentos preciso para viajar?</summary>
+      <p>Para viagens internacionais, é necessário passaporte válido. Alguns destinos exigem visto e comprovante de vacina. Sempre consulte os requisitos do país de destino com antecedência.</p>
+    </details>
+
+    <details>
+      <summary>🧭 Como funciona a personalização do roteiro?</summary>
+      <p>Você informa os destinos desejados, o orçamento, número de dias e preferências. A partir disso, criamos um roteiro completo com hospedagens, passeios, deslocamentos e dicas locais.</p>
+    </details>
+
+    <details>
+      <summary>📞 Como entro em contato com suporte?</summary>
+      <p>Você pode falar com nossa equipe via WhatsApp, Instagram ou pelo formulário no site. Nosso atendimento é rápido e eficiente!</p>
+    </details>
+    <details>
+      <summary>
+        <span class="faq-icon">📞</span> A agência oferece suporte durante a viagem?
+      </summary>
+      <p>Sim! Nosso time está disponível pelo WhatsApp para te ajudar em qualquer necessidade durante a sua viagem.</p>
+    </details>
+  
+    <details>
+      <summary>
+        <span class="faq-icon">💰</span> Posso pagar em parcelas?
+      </summary>
+      <p>Sim! Trabalhamos com pagamento via Pix, cartão de crédito e parcelamento com ou sem juros, dependendo do roteiro.</p>
+    </details>
+  
+    <details>
+      <summary>
+        <span class="faq-icon">🧳</span> Vocês ajudam a montar a mala ideal?
+      </summary>
+      <p>Sim! Enviamos dicas personalizadas do que levar, de acordo com o clima, duração e destino da sua viagem.</p>
+    </details>
+  
+    <details>
+      <summary>
+        <span class="faq-icon">🕐</span> Com quanto tempo de antecedência devo planejar?
+      </summary>
+      <p>O ideal é planejar com pelo menos 30 dias de antecedência, especialmente para destinos internacionais. Quanto antes, melhor para garantir as melhores tarifas.</p>
+    </details>
+  
+    <details>
+      <summary>
+        <span class="faq-icon">🌎</span> Quais destinos vocês oferecem?
+      </summary>
+      <p>Trabalhamos com destinos nacionais e internacionais. Desde viagens pelo Brasil até Europa, Caribe, América do Sul e mais.</p>
+    </details>
+  </div>
+</div>
+
+<!-- CSS FAQ -->
+<style>
+#btn-faq {
+  position: fixed;
+  bottom: 130px; /* Aumentamos para dar espaço para o chat/WhatsApp */
+  right: 20px;
+  background: #0077cc;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 16px;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 9999;
+  transition: background 0.3s;
+}
+
+#btn-faq:hover { 
+  background: #005fa3; 
+}
+
+.faq-modal {
+  display: none;
+  position: fixed;
+  z-index: 9998;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.faq-content {
+  background-color: #fff;
+  margin: 8% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 550px;
+  max-height: 80%; /* Define uma altura máxima */
+  overflow-y: auto; /* Permite o scroll */
+  animation: slideIn 0.3s ease-out;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.faq-content h2 {
+  text-align: center;
+  color: #0077cc;
+}
+
+.faq-content details {
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.faq-content summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.faq-content p {
+  margin-top: 10px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.fechar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 26px;
+  cursor: pointer;
+  color: #888;
+}
+
+.fechar:hover { 
+  color: #000; 
+}
+
+@keyframes slideIn {
+  from { 
+    transform: translateY(-30px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+</style>
+
+<!-- JS FAQ -->
+<script>
+  const modal = document.getElementById("faq-modal");
+  const btn = document.getElementById("btn-faq");
+  const fechar = document.getElementById("fechar-faq");
+
+  btn.onclick = () => modal.style.display = "block";
+  fechar.onclick = () => modal.style.display = "none";
+  window.onclick = (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  };
+</script>
+
 <body>
   <header class="header">
     <div class="logo">
