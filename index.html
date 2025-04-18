@@ -246,12 +246,25 @@
     </div>
   </section>
 
-<!--COMENTÀRIOS-->
+<!---COMENTARIOS-->
+
+<!-- Seção de Comentários -->
 <section id="comentarios" class="comentarios-container">
   <h2>Deixe seu comentário</h2>
   <form id="form-comentario">
     <input type="text" name="nome" placeholder="Seu nome" required />
     <textarea name="mensagem" rows="4" placeholder="Escreva seu comentário" required></textarea>
+    
+
+    <label for="avaliacao">Sua avaliação:</label>
+    <select name="avaliacao" required>
+      <option value="5">⭐⭐⭐⭐⭐</option>
+      <option value="4">⭐⭐⭐⭐</option>
+      <option value="3">⭐⭐⭐</option>
+      <option value="2">⭐⭐</option>
+      <option value="1">⭐</option>
+    </select>
+
     <button type="submit">Enviar Comentário</button>
   </form>
 
@@ -259,26 +272,91 @@
     <!-- Comentários aparecerão aqui -->
   </div>
 </section>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
 <script>
-  const form = document.getElementById('form-comentario');
-  const lista = document.getElementById('comentarios-lista');
+  window.addEventListener("DOMContentLoaded", () => {
+  // seu código...
+});
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
     
-    const nome = form.nome.value;
-    const mensagem = form.mensagem.value;
+  // Configuração do Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyDHFGb89ZoiIny26X99hQBNTiDkfKEB8S8",
+    authDomain: "reis-travel.firebaseapp.com",
+    databaseURL: "https://reis-travel-default-rtdb.firebaseio.com",
+    projectId: "reis-travel",
+    storageBucket: "reis-travel.firebasestorage.app",
+    messagingSenderId: "1002596731603",
+    appId: "1:1002596731603:web:9b91dff71ebdcdd9ec2226"
+  };
 
-    if (nome && mensagem) {
-      const comentario = document.createElement('div');
-      comentario.classList.add('comentario');
-      comentario.innerHTML = `<strong>${nome}</strong><p>${mensagem}</p>`;
-      lista.prepend(comentario); // Adiciona o novo comentário no topo
-      form.reset(); // Limpa o formulário
+  // Inicializar o Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  // Seleção do formulário e da lista de comentários
+  const form = document.getElementById("form-comentario");
+  const lista = document.getElementById("comentarios-lista");
+
+  // Enviar novo comentário
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const nome = form.nome.value.trim();
+    const mensagem = form.mensagem.value.trim();
+    const avaliacao = form.avaliacao.value;
+
+    if (nome && mensagem && avaliacao) {
+      const novoComentario = db.ref("comentarios").push();
+      novoComentario.set({
+        nome: nome,
+        mensagem: mensagem,
+        avaliacao: parseInt(avaliacao),
+        curtidas: 0
+      });
+      form.reset(); // Limpa o formulário após o envio
     }
   });
+
+  // Exibir comentários na página
+  db.ref("comentarios").on("value", (snapshot) => {
+    lista.innerHTML = ""; // Limpar a lista antes de exibir novos comentários
+    snapshot.forEach((childSnapshot) => {
+      const id = childSnapshot.key;
+      const data = childSnapshot.val();
+
+      const estrelas = "⭐".repeat(data.avaliacao || 0); // Exibe estrelas conforme a avaliação
+
+      const comentario = document.createElement("div");
+      comentario.classList.add("comentario");
+      comentario.innerHTML = `
+        <strong>${data.nome}</strong> - ${estrelas}<br>
+        <p>${data.mensagem}</p>
+        <button onclick="curtirComentario('${id}')">❤️ Curtir (<span id="like-${id}">${data.curtidas || 0}</span>)</button>
+        <button onclick="apagarComentario('${id}')">🗑️ Apagar</button>
+      `;
+      lista.prepend(comentario); // Adiciona o comentário no topo da lista
+    });
+  });
+
+  // Função para apagar comentário
+  function apagarComentario(id) {
+    db.ref("comentarios/" + id).remove();
+  }
+
+  // Função para curtir comentário
+  function curtirComentario(id) {
+    const curtidaRef = db.ref("comentarios/" + id + "/curtidas");
+    curtidaRef.transaction(function (atual) {
+      return (atual || 0) + 1; // Incrementa a contagem de curtidas
+    });
+  }
 </script>
-<!---COMENTÀRIOs-->   
+
+
+
 
   <section class="porque-escolher">
     <div class="container-porque">
@@ -436,6 +514,7 @@
     }
   }
 </script>
+
 
 <footer>
   <h3><i class="fas fa-plane-departure"></i> Reis Travel</h3>
