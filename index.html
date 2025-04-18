@@ -246,6 +246,40 @@
     </div>
   </section>
 
+<!--COMENTÀRIOS-->
+<section id="comentarios" class="comentarios-container">
+  <h2>Deixe seu comentário</h2>
+  <form id="form-comentario">
+    <input type="text" name="nome" placeholder="Seu nome" required />
+    <textarea name="mensagem" rows="4" placeholder="Escreva seu comentário" required></textarea>
+    <button type="submit">Enviar Comentário</button>
+  </form>
+
+  <div id="comentarios-lista">
+    <!-- Comentários aparecerão aqui -->
+  </div>
+</section>
+<script>
+  const form = document.getElementById('form-comentario');
+  const lista = document.getElementById('comentarios-lista');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    
+    const nome = form.nome.value;
+    const mensagem = form.mensagem.value;
+
+    if (nome && mensagem) {
+      const comentario = document.createElement('div');
+      comentario.classList.add('comentario');
+      comentario.innerHTML = `<strong>${nome}</strong><p>${mensagem}</p>`;
+      lista.prepend(comentario); // Adiciona o novo comentário no topo
+      form.reset(); // Limpa o formulário
+    }
+  });
+</script>
+<!---COMENTÀRIOs-->   
+
   <section class="porque-escolher">
     <div class="container-porque">
       <h2>Por que nos escolher?</h2>

@@ -843,3 +843,63 @@ body {
   color: #333;
 }
 
+/*Comentários*/
+.comentarios-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.comentarios-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+#form-comentario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#form-comentario input,
+#form-comentario textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#form-comentario button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#form-comentario button:hover {
+  background-color: #005fa3;
+}
+
+#comentarios-lista {
+  margin-top: 30px;
+}
+
+.comentario {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border-left: 4px solid #0077cc;
+}
+.comentario strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+}
